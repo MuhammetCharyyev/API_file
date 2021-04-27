@@ -387,6 +387,40 @@ Madina,Female,7657654321
  ![capturing_request_from_chrome_developer_tab](https://user-images.githubusercontent.com/59104509/100050552-a8f11800-2de7-11eb-89ce-709984891f05.png)
 
 
+## Running Postman Collection from Command Line 
+
+Official [Doc Here](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)
+
+Tools needed 
+
+1. Download and install [nodeJs](https://nodejs.org/en/download/)
+
+2. Download and install newman 
+   ```
+    npm install -g newman
+   ```
+3. Download the collection to your local by exporting as json
+![Exporting the Collection](https://user-images.githubusercontent.com/72038048/116264204-1b27a900-a748-11eb-9db1-b5a3e516966e.gif)
+
+   
+4. Run your Postman collection using newman command 
+   ```
+    newman run "Spartan End to End.postman_collection.json"
+   ```
+   or
+   ```
+    newman run https://www.getpostman.com/collections/253a25f7187f205bba34
+   ```
+5. HTML report using html extra reporter instead of just report from the command line 
+   1. Install html extra package using below command 
+   ```
+    npm install -g newman-reporter-htmlextra
+   ``` 
+   1. Now you can run same newman run command by adding `-r htmlextra` at the end 
+6. It will create a new folder called `newman` in current path and it contains the html report just got generated 
+7. You can see more options [here in the doc](https://www.npmjs.com/package/newman-reporter-htmlextra)
+
+
 ## RestAssured : 
 
 ### Maven dependencies : 
